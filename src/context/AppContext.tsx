@@ -10,10 +10,10 @@ let initialState = {
 
 const AppContext = React.createContext<IContext>(initialState);
 
-export const AppContextProvider = (props: any) => {
+export const AppContextProvider: React.FC<any> = props => {
   const [appState, setAppState] = useState<IContext>(initialState);
 
-  const setData = (key: keyof IContextData, value: any) => {
+  const setData = (key: keyof IContextData, value: any): void => {
     return setAppState({
       ...appState,
       data: { [key]: value }
